@@ -1,17 +1,16 @@
 //================= Trecho de código atendento aos requisitos do card-4 =================
 
-var media = 0;
-var notas = [];
-var materiaNotas = {
-    nomeMateria:"",
-    notas:""
-}
 var i_botao = window.document.querySelector(`button#id_botao`);
 
 i_botao.addEventListener("click", f_inserirDados);
 
 function f_inserirDados() {
-
+  var media = 0;
+  var notas = [];
+  var materiaNotas = {
+      nomeMateria:"",
+      notas:""
+  }
   let index = 0;
   let materia = window.prompt("Informe a matéria: ");
   while (!(notas.length == 4)) {
