@@ -1,0 +1,109 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+header{
+  background-color: rgb(56, 55, 55);
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: white;
+}
+
+main{
+  background-color: rgb(236, 236, 236);
+  display: flex;
+  justify-content: center;
+}
+
+.info-geral{
+  background-color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  min-width: 700px;
+  border-radius: 4px;
+}
+
+.info-aluno{
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.info-aluno h2{
+  margin-bottom: 10px;
+}
+
+.info-aluno p{
+  margin-bottom: 8px;
+}
+
+.notas-materias{
+  margin-bottom: 30px;
+}
+
+.titulo-botao{
+  display: flex;
+  justify-content:space-between;
+  margin-bottom: 15px;
+}
+
+button{
+  background-color: rgb(56, 55, 55);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3px 6px;
+  border-radius: 4px;
+}
+
+button:hover{
+  background-color: rgb(35, 34, 34);
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: rgb(236, 236, 236);
+  font-weight: bold;
+}
+
+.media-geral, .maior-media{
+  background-color: rgb(246, 246, 246);
+  margin-bottom: 30px;
+  padding-left: 10px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 4px;
+}
+
+.media-geral h3, .maior-media h3{
+  margin-bottom: 10px;
+}
+
+.lista-alunos{
+  margin-bottom: 30px;
+}
+
+.lista-alunos h2{
+  margin-bottom: 10px;
+}
+
+ul{
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}

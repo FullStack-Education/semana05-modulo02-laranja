@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>LabScore</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
+
 <body>
+  <header>
+    <h1>Dados do Aluno</h1>
+  </header>
+
+  <main>
+    <div class="info-geral">
+      <section class="info-aluno">
+        <h2>Informações do Aluno</h2>
+        <p><strong>Nome: </strong><span id="nome-aluno">João da Silva</span></p>
+        <p><strong>Idade: </strong><span id="idade-aluno">16 anos</span></p>
+        <p><strong>Série: </strong><span id="serie-aluno">2° ano do Ensino Médio</span></p>
+        <p><strong>Escola: </strong><span id="escola">Escola Estadual Professor José</span></p>
+        <p><strong>Matéria Favorita: </strong><span id="materia-favorita">Matemática</span></p>
+      </section>
+
+      <section class="notas-materias">
+        <div class="titulo-botao">
+          <h2>Notas das Matérias</h2>
+          <button>Adicionar Linha</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Matéria</th>
+              <th>Nota 1</th>
+              <th>Nota 2</th>
+              <th>Nota 3</th>
+              <th>Nota 4</th>
+              <th>Média</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Matemática</td>
+              <td>7.5</td>
+              <td>8.0</td>
+              <td>6.0</td>
+              <td>9.0</td>
+              <td>7.6</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="media-geral">
+        <h3>Média Geral do Aluno</h3>
+        <p>A média geral do aluno é <span id="media-geral-aluno">7.6</span></p>
+      </section>
+
+      <section class="maior-media">
+        <h3>Maior Média entre as Matérias</h3>
+        <p>A maior média entre as matérias é <span id="maior-media-materias">7.6</span></p>
+      </section>
+
+      <section class="lista-alunos">
+        <h2>Lista de Alunos</h2>
+        <ul>
+          <li>João da Silva</li>
+          <li>Maria Oliveira</li>
+          <li>José Santos</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
   <script src="/script.js"></script>
 </body>
+
 </html>
