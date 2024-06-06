@@ -40,6 +40,7 @@ for(let i = 0; i <= 10; i++){
 }
 
 // Exercicio 05 Semana 03
+/*
 let nomeAluno = prompt("Qual o nome do aluno?");
 let idadeAluno = prompt("Qual a idade do aluno?");
 let serieAluno = prompt("Qual a série do aluno?");
@@ -53,7 +54,7 @@ if(confirmacao){
 } else{
   document.write("</br>Os dados do aluno não foram confirmados")
 }
-
+*/
 
 // Exercicio 06 Semana 03
 /*
