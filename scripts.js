@@ -8,15 +8,55 @@ let materiaFavorita = prompt("Qual a sua matéria favorita?");
 
 let confirmacao = confirm("Você confirma os dados inseridos?");
 
-if(confirmacao){
-  document.write("</br>" + "Nome do aluno: " +nomeAluno + "</br>Idade do aluno: " +idadeAluno + "</br>Série do aluno:" +serieAluno + "</br>Nome da escola: " +nomeEscola + "</br>Matéria favorita: " + materiaFavorita);
-} else{
-  document.write("</br>Os dados do aluno não foram confirmados.")
-}
-
 // =================================  Fim do card-2 =====================================
 
+//================= Trecho de código atendento aos requisitos do card-3 =================
+
+if(confirmacao){
+  let imprimeNomeAluno = document.getElementById("nome-aluno");
+  imprimeNomeAluno.innerHTML = ``;
+  imprimeNomeAluno.innerHTML += `${nomeAluno}`;
+  
+  let imprimeidadeAluno = document.getElementById("idade-aluno");
+  imprimeidadeAluno.innerHTML = ``;
+  imprimeidadeAluno.innerHTML += `${idadeAluno} anos`;
+
+  let imprimeSerieAluno = document.getElementById("serie-aluno");
+  imprimeSerieAluno.innerHTML = ``;
+  imprimeSerieAluno.innerHTML += `${serieAluno}`;
+
+  let imprimeNomeEscola = document.getElementById("escola");
+  imprimeNomeEscola.innerHTML = ``;
+  imprimeNomeEscola.innerHTML = `${nomeEscola}`;
+
+  let imprimeMateriaFavorita = document.getElementById("materia-favorita");
+  imprimeMateriaFavorita.innerHTML = ``;
+  imprimeMateriaFavorita.innerHTML = `${materiaFavorita}`;
+  
+} else{
+  let imprimeNomeAluno = document.getElementById("nome-aluno");
+  imprimeNomeAluno.innerHTML = `Informação não confirmada.`;
+  
+  
+  let imprimeidadeAluno = document.getElementById("idade-aluno");
+  imprimeidadeAluno.innerHTML = `Informação não confirmada.`;
+
+  let imprimeSerieAluno = document.getElementById("serie-aluno");
+  imprimeSerieAluno.innerHTML = `Informação não confirmada.`;
+
+  let imprimeNomeEscola = document.getElementById("escola");
+  imprimeNomeEscola.innerHTML = `Informação não confirmada.`;
+
+  let imprimeMateriaFavorita = document.getElementById("materia-favorita");
+  imprimeMateriaFavorita.innerHTML = `Informação não confirmada.`;
+}
+
+// =================================  Fim do card-3 =====================================
+
 //================= Trecho de código atendento aos requisitos do card-4 =================
+
+var i_linha = window.document.querySelector('#id_notas_materias');
+i_linha.innerHTML = ``; 
 
 var i_botao = window.document.querySelector(`button#id_botao`);
 
