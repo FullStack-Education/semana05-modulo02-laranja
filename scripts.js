@@ -1,3 +1,21 @@
+//================= Trecho de código atendento aos requisitos do card-2 =================
+
+let nomeAluno = prompt("Qual o nome do aluno?");
+let idadeAluno = prompt("Qual a idade do aluno?");
+let serieAluno = prompt("Qual a série do aluno?");
+let nomeEscola = prompt("Qual o nome da escola");
+let materiaFavorita = prompt("Qual a sua matéria favorita?");
+
+let confirmacao = confirm("Você confirma os dados inseridos?");
+
+if(confirmacao){
+  document.write("</br>" + "Nome do aluno: " +nomeAluno + "</br>Idade do aluno: " +idadeAluno + "</br>Série do aluno:" +serieAluno + "</br>Nome da escola: " +nomeEscola + "</br>Matéria favorita: " + materiaFavorita);
+} else{
+  document.write("</br>Os dados do aluno não foram confirmados.")
+}
+
+// =================================  Fim do card-2 =====================================
+
 //================= Trecho de código atendento aos requisitos do card-4 =================
 
 var i_botao = window.document.querySelector(`button#id_botao`);
@@ -47,4 +65,4 @@ function f_novaLinha(materiaNotas, media) {
                     </tr>`
 }
 
-// =================================  Fim do card-4 ====================================
+// =================================  Fim do card-4 =====================================
