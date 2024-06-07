@@ -12,43 +12,25 @@ let confirmacao = confirm("Você confirma os dados inseridos?");
 
 //================= Trecho de código atendento aos requisitos do card-3 =================
 
+let imprimeNomeAluno = document.getElementById("nome-aluno");
+let imprimeidadeAluno = document.getElementById("idade-aluno");
+let imprimeSerieAluno = document.getElementById("serie-aluno");
+let imprimeNomeEscola = document.getElementById("escola");
+let imprimeMateriaFavorita = document.getElementById("materia-favorita");
+
 if(confirmacao){
-  let imprimeNomeAluno = document.getElementById("nome-aluno");
-  imprimeNomeAluno.innerHTML = ``;
-  imprimeNomeAluno.innerHTML += `${nomeAluno}`;
-  
-  let imprimeidadeAluno = document.getElementById("idade-aluno");
-  imprimeidadeAluno.innerHTML = ``;
-  imprimeidadeAluno.innerHTML += `${idadeAluno} anos`;
-
-  let imprimeSerieAluno = document.getElementById("serie-aluno");
-  imprimeSerieAluno.innerHTML = ``;
-  imprimeSerieAluno.innerHTML += `${serieAluno}`;
-
-  let imprimeNomeEscola = document.getElementById("escola");
-  imprimeNomeEscola.innerHTML = ``;
-  imprimeNomeEscola.innerHTML = `${nomeEscola}`;
-
-  let imprimeMateriaFavorita = document.getElementById("materia-favorita");
-  imprimeMateriaFavorita.innerHTML = ``;
-  imprimeMateriaFavorita.innerHTML = `${materiaFavorita}`;
+  imprimeNomeAluno.innerText = nomeAluno;
+  imprimeidadeAluno.innerText = idadeAluno + " anos";
+  imprimeSerieAluno.innerText = serieAluno;
+  imprimeNomeEscola.innerText = nomeEscola;
+  imprimeMateriaFavorita.innerText = materiaFavorita;
   
 } else{
-  let imprimeNomeAluno = document.getElementById("nome-aluno");
-  imprimeNomeAluno.innerHTML = `Informação não confirmada.`;
-  
-  
-  let imprimeidadeAluno = document.getElementById("idade-aluno");
-  imprimeidadeAluno.innerHTML = `Informação não confirmada.`;
-
-  let imprimeSerieAluno = document.getElementById("serie-aluno");
-  imprimeSerieAluno.innerHTML = `Informação não confirmada.`;
-
-  let imprimeNomeEscola = document.getElementById("escola");
-  imprimeNomeEscola.innerHTML = `Informação não confirmada.`;
-
-  let imprimeMateriaFavorita = document.getElementById("materia-favorita");
-  imprimeMateriaFavorita.innerHTML = `Informação não confirmada.`;
+  imprimeNomeAluno.innerText = "Informação não confirmada.";
+  imprimeidadeAluno.innerText = "Informação não confirmada.";
+  imprimeSerieAluno.innerText = "Informação não confirmada.";
+  imprimeNomeEscola.innerText = "Informação não confirmada.";
+  imprimeMateriaFavorita.innerText = "Informação não confirmada.";
 }
 
 // =================================  Fim do card-3 =====================================
