@@ -8,15 +8,37 @@ let materiaFavorita = prompt("Qual a sua matéria favorita?");
 
 let confirmacao = confirm("Você confirma os dados inseridos?");
 
-if(confirmacao){
-  document.write("</br>" + "Nome do aluno: " +nomeAluno + "</br>Idade do aluno: " +idadeAluno + "</br>Série do aluno:" +serieAluno + "</br>Nome da escola: " +nomeEscola + "</br>Matéria favorita: " + materiaFavorita);
-} else{
-  document.write("</br>Os dados do aluno não foram confirmados.")
-}
-
 // =================================  Fim do card-2 =====================================
 
+//================= Trecho de código atendento aos requisitos do card-3 =================
+
+let imprimeNomeAluno = document.getElementById("nome-aluno");
+let imprimeidadeAluno = document.getElementById("idade-aluno");
+let imprimeSerieAluno = document.getElementById("serie-aluno");
+let imprimeNomeEscola = document.getElementById("escola");
+let imprimeMateriaFavorita = document.getElementById("materia-favorita");
+
+if(confirmacao){
+  imprimeNomeAluno.innerText = nomeAluno;
+  imprimeidadeAluno.innerText = idadeAluno + " anos";
+  imprimeSerieAluno.innerText = serieAluno;
+  imprimeNomeEscola.innerText = nomeEscola;
+  imprimeMateriaFavorita.innerText = materiaFavorita;
+  
+} else{
+  imprimeNomeAluno.innerText = "Informação não confirmada.";
+  imprimeidadeAluno.innerText = "Informação não confirmada.";
+  imprimeSerieAluno.innerText = "Informação não confirmada.";
+  imprimeNomeEscola.innerText = "Informação não confirmada.";
+  imprimeMateriaFavorita.innerText = "Informação não confirmada.";
+}
+
+// =================================  Fim do card-3 =====================================
+
 //================= Trecho de código atendento aos requisitos do card-4 =================
+
+var i_linha = window.document.querySelector('#id_notas_materias');
+i_linha.innerHTML = ``; 
 
 var i_botao = window.document.querySelector(`button#id_botao`);
 
