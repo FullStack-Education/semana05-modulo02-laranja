@@ -92,7 +92,7 @@ function f_novaLinha(materiaNotas, media) {
 
 // =================================  Fim do card-4 =====================================
 
-//================= Trecho de código atendento aos requisitos do card-5 =================
+//================= Trecho de código atendento aos requisitos dos cards 5 e 6  =================
 
 function calcularMediaGeral() {
   let linhas = document.querySelectorAll('#id_notas_materias tr')
@@ -105,4 +105,4 @@ function calcularMediaGeral() {
   document.getElementById('media-geral-aluno').innerText = mediaGeral.toFixed(1)
 }
 
-// =================================  Fim do card-5 =====================================
+// =================================  Fim dos cards 5 e 6 =====================================
