@@ -54,8 +54,12 @@ function f_inserirDados() {
   while (notas.length < 4) {
     let nota = parseFloat(window.prompt(`Informe a ${index + 1}° nota: `))
     if (!isNaN(nota)) {
-      notas.push(nota)
-      index++
+      if (nota >= 0 && nota <= 10) {
+        notas.push(nota)
+        index++
+      } else {
+        alert('Informe uma nota válida para matéria. A nota deve ser maior ou igual a 0.0 e menor ou igual a 10!')  
+      }      
     } else {
       alert('Por favor, insira um valor numérico.')
     }
@@ -67,6 +71,22 @@ function f_inserirDados() {
   f_novaLinha(materiaNotas, media)
   calcularMediaGeral()
 
+  //================= Trecho de código atendento aos requisitos dos cards 7  =================
+  const todasAsNotasCadastradas = document.querySelectorAll('#id_notas_materias tr')  
+  let mediasCadastradas = []
+
+  for (const notas of todasAsNotasCadastradas) {    
+    let media = parseFloat(notas.cells[5].innerText)
+
+    if (!isNaN(media)) {
+      mediasCadastradas.push(media)
+    }
+  }
+    
+  let maiorMedia = maiorMediaDasMaterias(mediasCadastradas)  
+  document.getElementById('maior-media-materias').innerText = maiorMedia.toFixed(1)
+  // =================================  Fim do card 7 =====================================
+  
   return materiaNotas
 }
 
@@ -106,3 +126,17 @@ function calcularMediaGeral() {
 }
 
 // =================================  Fim dos cards 5 e 6 =====================================
+
+//================= Trecho de código atendento aos requisitos dos cards 7  =================
+
+function maiorMediaDasMaterias(medias) {
+  return medias.reduce((anterior, atual) => {
+    if (atual > anterior) {
+      return atual
+    } else {
+      return anterior
+    }
+  }, medias[0])
+}
+
+// =================================  Fim do card 7 =====================================
