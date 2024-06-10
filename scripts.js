@@ -1,92 +1,142 @@
-// Exercicio 01 Semana 03
-let notas = [10,10,5,7];
+//================= Trecho de código atendento aos requisitos do card-2 =================
 
-function calculaMediaNotas(notas){
-  let soma = 0;
-  for(let i = 0; i < notas.length; i++){
-    soma += notas[i];
+let nomeAluno = prompt('Qual o nome do aluno?')
+let idadeAluno = prompt('Qual a idade do aluno?')
+let serieAluno = prompt('Qual a série do aluno?')
+let nomeEscola = prompt('Qual o nome da escola')
+let materiaFavorita = prompt('Qual a sua matéria favorita?')
+
+let confirmacao = confirm('Você confirma os dados inseridos?')
+
+// =================================  Fim do card-2 =====================================
+
+//================= Trecho de código atendento aos requisitos do card-3 =================
+
+let imprimeNomeAluno = document.getElementById('nome-aluno')
+let imprimeidadeAluno = document.getElementById('idade-aluno')
+let imprimeSerieAluno = document.getElementById('serie-aluno')
+let imprimeNomeEscola = document.getElementById('escola')
+let imprimeMateriaFavorita = document.getElementById('materia-favorita')
+
+if (confirmacao) {
+  imprimeNomeAluno.innerText = nomeAluno
+  imprimeidadeAluno.innerText = idadeAluno + ' anos'
+  imprimeSerieAluno.innerText = serieAluno
+  imprimeNomeEscola.innerText = nomeEscola
+  imprimeMateriaFavorita.innerText = materiaFavorita
+} else {
+  imprimeNomeAluno.innerText = 'Informação não confirmada.'
+  imprimeidadeAluno.innerText = 'Informação não confirmada.'
+  imprimeSerieAluno.innerText = 'Informação não confirmada.'
+  imprimeNomeEscola.innerText = 'Informação não confirmada.'
+  imprimeMateriaFavorita.innerText = 'Informação não confirmada.'
+}
+
+// =================================  Fim do card-3 =====================================
+
+//================= Trecho de código atendento aos requisitos do card-4 =================
+
+var i_linha = window.document.querySelector('#id_notas_materias')
+i_linha.innerHTML = ``
+
+var i_botao = window.document.querySelector(`button#id_botao`)
+i_botao.addEventListener('click', f_inserirDados)
+
+function f_inserirDados() {
+  var media = 0
+  var notas = []
+  var materiaNotas = {
+    nomeMateria: '',
+    notas: ''
   }
-  let media = soma/notas.length;
-  console.log(soma)
-  return media;
-}
-
-let media = calculaMediaNotas(notas);
-console.log(media);
-
-// Exercicio 02 Semana 03
-function mediaAluno(media){
-  if(media >= 7){
-    document.write("Parabéns, você passou na média!")
-  }else {
-    document.write("Infelizmente você está de recuperação!")
-  }
-}
-
-mediaAluno(media);
-
-// Exercicio 03 Semana 03
-let nomesAlunos = ["Andre", "Pedro", "Maria", "Lana", "Catarina"];
-
-function exibeNomesAlunos(nomes){
-  nomes.forEach((nome) => document.write("</br>" +nome));
-}
-
-exibeNomesAlunos(nomesAlunos);
-
-// Exercicio 04 Semana 03
-for(let i = 0; i <= 10; i++){
-  document.write("</br> 8 x " + i + " = " + 8*i);
-}
-
-// Exercicio 05 Semana 03
-let nomeAluno = prompt("Qual o nome do aluno?");
-let idadeAluno = prompt("Qual a idade do aluno?");
-let serieAluno = prompt("Qual a série do aluno?");
-let nomeEscola = prompt("Qual o nome da escola");
-let materiaFavorita = prompt("Qual a sua matéria favorita?");
-
-let confirmacao = confirm("Você confirma os dados inseridos?");
-
-if(confirmacao){
-  document.write("</br>" + "Nome do aluno: " +nomeAluno + "</br>Idade do aluno: " +idadeAluno + "</br>Série do aluno:" +serieAluno + "</br>Nome da escola: " +nomeEscola + "</br>Matéria favorita: " + materiaFavorita);
-} else{
-  document.write("</br>Os dados do aluno não foram confirmados")
-}
-
-
-// Exercicio 06 Semana 03
-/*
-let nomeDaMateria = prompt("Nome da matéria")
-let notasMateria =[]
-let contador = 0;
-
-while(contador < 4){
-  let nota = prompt("Nota:");
-  notasMateria.push(+nota)
-  contador++
-}
-
-const materiaNotas = {
-  nomeMateria: nomeDaMateria,
-  notas: notasMateria
-}
-
-let mediaMateria = calculaMediaNotas(materiaNotas.notas);
-console.log(mediaMateria);
-*/
-
-// Exercicio 07 Semana 03
-let n = [9,10,3,5,55,23,89,11,9,1]; 
-
-function maiorNumero(numeros){
-  return numeros.reduce((ant, atual) => {
-    if (atual > ant) {
-      return atual; 
+  let index = 0
+  let materia = window.prompt('Informe a matéria: ')
+  while (notas.length < 4) {
+    let nota = parseFloat(window.prompt(`Informe a ${index + 1}° nota: `))
+    if (!isNaN(nota)) {
+      if (nota >= 0 && nota <= 10) {
+        notas.push(nota)
+        index++
+      } else {
+        alert('Informe uma nota válida para matéria. A nota deve ser maior ou igual a 0.0 e menor ou igual a 10!')  
+      }      
     } else {
-      return ant;
+      alert('Por favor, insira um valor numérico.')
     }
-  }, numeros[0]); 
+  }
+  materiaNotas.nomeMateria = materia
+  materiaNotas.notas = notas
+  media = f_media(notas)
+
+  f_novaLinha(materiaNotas, media)
+  calcularMediaGeral()
+
+  //================= Trecho de código atendento aos requisitos dos cards 7  =================
+  const todasAsNotasCadastradas = document.querySelectorAll('#id_notas_materias tr')  
+  let mediasCadastradas = []
+
+  for (const notas of todasAsNotasCadastradas) {    
+    let media = parseFloat(notas.cells[5].innerText)
+
+    if (!isNaN(media)) {
+      mediasCadastradas.push(media)
+    }
+  }
+    
+  let maiorMedia = maiorMediaDasMaterias(mediasCadastradas)  
+  document.getElementById('maior-media-materias').innerText = maiorMedia.toFixed(1)
+  // =================================  Fim do card 7 =====================================
+  
+  return materiaNotas
 }
 
-console.log(maiorNumero(n));
+function f_media(notas) {
+  let soma = 0
+  for (let index = 0; index < notas.length; index++) {
+    soma += parseFloat(notas[index])
+  }
+  return soma / notas.length
+}
+
+function f_novaLinha(materiaNotas, media) {
+  var i_linha = window.document.querySelector('#id_notas_materias')
+  i_linha.innerHTML += `<tr>
+    <td>${materiaNotas.nomeMateria}</td>
+    <td>${materiaNotas.notas[0].toFixed(1)}</td>
+    <td>${materiaNotas.notas[1].toFixed(1)}</td>
+    <td>${materiaNotas.notas[2].toFixed(1)}</td>
+    <td>${materiaNotas.notas[3].toFixed(1)}</td>
+    <td>${media.toFixed(1)}</td>
+  </tr>`
+}
+
+// =================================  Fim do card-4 =====================================
+
+//================= Trecho de código atendento aos requisitos dos cards 5 e 6  =================
+
+function calcularMediaGeral() {
+  let linhas = document.querySelectorAll('#id_notas_materias tr')
+  let somaMedias = 0
+  linhas.forEach(linha => {
+    let media = parseFloat(linha.cells[5].innerText)
+    somaMedias += media
+  })
+  let mediaGeral = somaMedias / linhas.length
+  document.getElementById('media-geral-aluno').innerText = mediaGeral.toFixed(1)
+}
+
+// =================================  Fim dos cards 5 e 6 =====================================
+
+//================= Trecho de código atendento aos requisitos dos cards 7  =================
+
+function maiorMediaDasMaterias(medias) {
+  return medias.reduce((anterior, atual) => {
+    if (atual > anterior) {
+      return atual
+    } else {
+      return anterior
+    }
+  }, medias[0])
+}
+
+// =================================  Fim do card 7 =====================================
